@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiAppCrud.Views.CategoriaListPage">
+    <StackLayout Padding="10">
+
+        <!-- Botón Agregar Categoría con nuevo color -->
+        <Button Text="Agregar Categoría" BackgroundColor="Blue" TextColor="White" FontSize="Medium" Clicked="OnAddCategoryClicked"/>
+
+        <!-- Lista de categorías con estilos personalizados -->
+        <ListView x:Name="CategoriasListView" ItemTapped="OnCategoryTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding Descripcion}" TextColor="Black" DetailColor="Gray"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+</ContentPage>
