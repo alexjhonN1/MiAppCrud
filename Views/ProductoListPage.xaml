@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MiAppCrud.Views.ProductoListPage"
+             Title="Lista de Productos">
+
+    <StackLayout Padding="10">
+        <!-- Botón para agregar nuevo producto -->
+        <Button Text="Agregar Producto" 
+                Clicked="OnAddProductClicked"
+                BackgroundColor="Green" 
+                TextColor="White" />
+
+        <!-- ListView para mostrar productos -->
+        <ListView x:Name="ProductosListView" ItemTapped="OnProductTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding Precio}"/>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <!-- Botón para actualizar producto seleccionado -->
+        <Button Text="Actualizar Producto"
+                Clicked="OnUpdateProductClicked"
+                BackgroundColor="Orange"
+                TextColor="White"
+                Margin="0,20,0,0" />
+        <!--Boton de Ordenamiento  A-Z proximamente -->
+    </StackLayout>
+</ContentPage>
